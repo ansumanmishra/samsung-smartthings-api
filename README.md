@@ -30,4 +30,39 @@ Here are the steps for integrating Smart Things API to Switch on/off TV
     }
     ```
 ### Switch On/Off
+- For Switching on the TV
+    ```sh
+    [POST] https://api.smartthings.com/v1/devices/{deviceId}/commands
+    Authorization: Bearer {accessToken}
+    Content-Type: application/json
+    
+    {
+        "commands": [
+            {
+                "component": "main",
+                "capability": "switch",
+                "command": "on",
+                "arguments": []
+            }
+        ]
+    }
+    ```
+- For Switching off the TV
+    ```sh
+    [POST] https://api.smartthings.com/v1/devices/{deviceId}/commands
+    Authorization: Bearer {accessToken}
+    Content-Type: application/json
+    
+    {
+        "commands": [
+            {
+                "component": "main",
+                "capability": "switch",
+                "command": "off",
+                "arguments": []
+            }
+        ]
+    }
+    ```
+
 - Follow the php script `smartthings-api.php` for a full implementation of the APIs for switching on/off the TV.
